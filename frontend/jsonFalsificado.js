@@ -1,26 +1,28 @@
-// jsonFalsificado.js
+document.addEventListener('DOMContentLoaded', function() {
+    const contenedorArticulos = document.getElementById('contenedor-articulos');
 
-const datosArticulos = [
-    {
-        titular: "Los 5 mejores fichajes de la temporada",
-        contenido: "Descubre quiénes son los jugadores que están haciendo la diferencia en sus nuevos equipos esta temporada."
-    },
-    {
-        titular: "El secreto detrás del éxito del equipo campeón",
-        contenido: "Analizamos las estrategias tácticas y el trabajo en equipo que llevaron a este equipo a levantar el trofeo."
-    },
-    {
-        titular: "Joven promesa del fútbol rompe récord de goles",
-        contenido: "Con tan solo 18 años, este jugador ha establecido un nuevo récord de goles en una temporada histórica."
-    },
-    {
-        titular: "Entrevista exclusiva con el entrenador estrella",
-        contenido: "El entrenador revela sus secretos para mantener la motivación y el rendimiento máximo de sus jugadores."
-    },
-    {
-        titular: "El impacto del VAR en el fútbol moderno",
-        contenido: "Exploramos cómo la tecnología ha cambiado las reglas del juego y la controversia que ha generado en la comunidad futbolística."
-    }
-];
+    // Ejemplo de datos de artículos (puedes reemplazar con tus datos reales)
+    const datosArticulos = [
+        { titular: 'Artículo 1', contenido: 'Contenido del artículo 1' },
+        { titular: 'Artículo 2', contenido: 'Contenido del artículo 2' },
+        { titular: 'Artículo 3', contenido: 'Contenido del artículo 3' },
+        { titular: 'Artículo 4', contenido: 'Contenido del artículo 4' },
+        { titular: 'Artículo 5', contenido: 'Contenido del artículo 5' }
+    ];
 
-module.exports = datosArticulos;
+    // Itera sobre los datos de los artículos para mostrarlos en el DOM
+    datosArticulos.forEach(articulo => {
+        const articuloDiv = document.createElement('div');
+        articuloDiv.classList.add('articulo');
+
+        const tituloElemento = document.createElement('h2');
+        tituloElemento.textContent = articulo.titular;
+
+        const contenidoElemento = document.createElement('p');
+        contenidoElemento.textContent = articulo.contenido;
+
+        articuloDiv.appendChild(tituloElemento);
+        articuloDiv.appendChild(contenidoElemento);
+        contenedorArticulos.appendChild(articuloDiv);
+    });
+});
